@@ -94,14 +94,14 @@ button:active {
 
 .output__list{
     list-style: none;
-    padding-left: 10px;
+    padding: 0 10px;
 }
 
 .word__random {
     cursor: pointer;
     text-align: center;
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 40px;
+    line-height: 60px;
 }
 
 li {
