@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Vollkorn', serif;
+    background-image: url('https://wallpaperaccess.com/full/33401.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: auto;
+}
+
+.title {
+    color: #ef5777;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+    font-size: 60px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.word {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.word__label {
+    margin-bottom: 10px;
+    font-weight: 540;
+    font-size: 22px;
+    color: #ef5777;
+    text-shadow: 1.5px 1.5px 0 #333, 1.5px 1.5px 0 rgba(0, 0, 0, 0.9);
+}
+
+.word__input,
+.mean__input {
+    line-height: 40px;
+    font-size: 18px;
+    padding-left: 10px;
+    font-weight: 500px;
+    border-radius: 8px;
+}
+
+.word__input:focus,
+.mean__input:focus {
+    outline: none;
+    border: 2px solid #ef5777
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.submit,
+.check,
+.random {
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#output {
+    margin-top: 10px;
+    background-color: bisque;
+}
+
+.output__list{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.word__random {
+    cursor: pointer;
+    text-align: center;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+li {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.note {
+    color: #ef5777;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 1.5px 1.5px 0px #333, 1.5px 1.5px 0px rgba(0, 0, 0, 1);
+}
