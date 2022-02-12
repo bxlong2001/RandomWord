@@ -75,6 +75,7 @@ randomBtn.onclick = () => {
         arrayWordCopy.splice(randomNumber,1)
     }else {
         wordRandom.innerHTML = 'DONE!'
+        meanRandom.innerHTML = 'DONE!'
         arrayWordCopy = [...arrayWord]
     }
 
