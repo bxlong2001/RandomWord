@@ -12,34 +12,38 @@ const button = $$('button')
 const arrayWord = []
 let arrayWordCopy = []
 
+function resetInput () {
+    wordInput.value = ''
+    meanInput.value = ''
+}
+
 submitBtn.onclick = () => {
     if(wordInput.value && meanInput.value) {
         const valueInput = {
             word: `${wordInput.value}`,
             mean: `${meanInput.value}`
         }
-
+        
         arrayWord.push(valueInput)
         arrayWordCopy = [...arrayWord]
     }
     
-    wordInput.value = ''
-    meanInput.value = ''
+    resetInput()
 }
 
 checkBtn.onclick = () => {
+    resetInput()
+
     const htmls = arrayWord.map((array,index) =>
     `<li>${index}. ${array.word} : ${array.mean}</li>`
     ).join('')
     outputList.innerHTML = htmls
     
-    wordInput.value = ''
-    meanInput.value = ''
 }
 
 randomBtn.onclick = () => {
-    wordInput.value = ''
-    meanInput.value = ''
+    resetInput()
+
     randomNumber = Math.floor(Math.random() * arrayWordCopy.length)
 
     const arrayWordRandom = arrayWordCopy.find((array,index) => index == randomNumber)
