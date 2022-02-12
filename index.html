@@ -28,12 +28,24 @@
             <button class="random" disabled>RANDOM</button>
         </div>
 
-        <span class="note">*** Sau khi random, ấn để xem lại nghĩa ***</span>
-
+        
         <div id="output">
             <ul class="output__list">
-
+                
             </ul>
+        </div>
+        
+        <!-- Random -->
+        <div class="flip-card" hidden>
+            *** Chạm để xem lại nghĩa ***
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <span class="word__random"></span>
+                </div>
+                <div class="flip-card-back">
+                    <span class="mean__random"></span>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./index.js"></script>

@@ -8,6 +8,10 @@ const checkBtn = $('.check')
 const randomBtn = $('.random')
 const outputList = $('.output__list')
 const button = $$('button')
+const flip = $('.flip-card')
+const note = $('.note')
+const wordRandom = $('.word__random')
+const meanRandom = $('.mean__random')
 
 const arrayWord = []
 let arrayWordCopy = []
@@ -47,6 +51,9 @@ submitBtn.onclick = () => {
 checkBtn.onclick = () => {
     resetInput()
 
+    outputList.removeAttribute('hidden')
+    flip.setAttribute('hidden',"")
+
     const htmls = arrayWord.map((array,index) =>
     `<li>${index}. ${array.word} : ${array.mean}</li>`
     ).join('')
@@ -57,15 +64,15 @@ checkBtn.onclick = () => {
 randomBtn.onclick = () => {
     resetInput()
 
+    outputList.setAttribute('hidden','')
+    flip.removeAttribute('hidden')
+
     randomNumber = Math.floor(Math.random() * arrayWordCopy.length)
     const arrayWordRandom = arrayWordCopy.find((array,index) => index == randomNumber)
     if(arrayWordCopy.length != 0){
-        outputList.innerHTML = `<li class='word__random'>${arrayWordRandom.word}</li>`
         arrayWordCopy.splice(randomNumber, 1)
-        const wordRandom = $('.word__random')
-        wordRandom.onclick = () => {
-            outputList.innerHTML = `<li class='word__random'>${arrayWordRandom.mean}</li>`
-        }
+        wordRandom.innerText = arrayWordRandom.word
+        meanRandom.innerText = arrayWordRandom.mean
     }else {
         outputList.innerHTML = `<li class='word__random'>Done!</li>`
         arrayWordCopy = [...arrayWord]

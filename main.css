@@ -105,24 +105,79 @@ button:enabled:active {
     padding: 0 10px;
 }
 
-.word__random {
-    cursor: pointer;
-    text-align: center;
-    font-size: 40px;
-    line-height: 60px;
-    overflow: hidden;
-}
-
 li {
     font-size: 20px;
     line-height: 30px;
 }
 
-.note {
+
+/* Flip */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    margin: auto;
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
     color: #ef5777;
     font-style: italic;
     font-size: 18px;
     font-weight: 600;
     text-shadow: 1px 1px 0px #333, 1.5px 1.5px 0px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+  
+  /* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-image: url('https://wallpaperaccess.com/full/385.jpg');
+    background-size: 100%;
+    background-position-y: 8px;
+    /* background-color: white; */
+    color: #ffffff;
+    display: flex;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-image: url('https://cf.shopee.vn/file/8b814fa66a3676d9f1090a4e8df515ba');
+    background-size: 100%;
+    background-position-y: -50px;
+    /* background-color: #be0026; */
+    color: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.note {
+    text-align: center;
+}
+
+.word__random,
+.mean__random {
+    font-size: 40px;
     margin: auto;
 }
