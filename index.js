@@ -70,11 +70,11 @@ randomBtn.onclick = () => {
     randomNumber = Math.floor(Math.random() * arrayWordCopy.length)
     const arrayWordRandom = arrayWordCopy.find((array,index) => index == randomNumber)
     if(arrayWordCopy.length != 0){
-        arrayWordCopy.splice(randomNumber, 1)
         wordRandom.innerText = arrayWordRandom.word
         meanRandom.innerText = arrayWordRandom.mean
+        arrayWordCopy.splice(randomNumber,1)
     }else {
-        outputList.innerHTML = `<li class='word__random'>Done!</li>`
+        wordRandom.innerHTML = 'DONE!'
         arrayWordCopy = [...arrayWord]
     }
 
