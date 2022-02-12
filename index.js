@@ -35,13 +35,21 @@ checkBtn.onclick = () => {
     meanInput.value = ''
 }
 
-
+let arrayWordCopy = [...arrayWord]
 randomBtn.onclick = () => {
-    const randomNumber = Math.floor(Math.random() * arrayWord.length)
-    const arrayWordRandom = arrayWord[randomNumber]
-    outputList.innerHTML = `<li class='word__random'>${arrayWordRandom.word}</li>`
+    randomNumber = Math.floor(Math.random() * arrayWordCopy.length)
 
+    const arrayWordRandom = arrayWordCopy.find((array,index) => index == randomNumber)
+
+    if(arrayWordCopy.length != 0){
+        outputList.innerHTML = `<li class='word__random'>${arrayWordRandom.word}</li>`
+        arrayWordCopy.splice(randomNumber, 1)
+    }else {
+        outputList.innerHTML = `<li class='word__random'>Done!</li>`
+        arrayWordCopy = [...arrayWord]
+    }
     const wordRandom = $('.word__random')
+    
     wordRandom.onclick = () => {
         outputList.innerHTML = `<li class='word__random'>${arrayWordRandom.mean}</li>`
     }

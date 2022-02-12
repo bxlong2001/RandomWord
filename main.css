@@ -102,6 +102,7 @@ button:active {
     text-align: center;
     font-size: 40px;
     line-height: 60px;
+    overflow: hidden;
 }
 
 li {
