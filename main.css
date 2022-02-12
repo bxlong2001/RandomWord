@@ -9,6 +9,7 @@ html {
     background-image: url('https://wallpaperaccess.com/full/33401.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 100%;
 }
 
